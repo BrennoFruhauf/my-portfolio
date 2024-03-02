@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
 
 const config: Config = {
   content: [
@@ -6,7 +7,13 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
-  theme: {},
+  theme: {
+    colors: {
+      transparent: 'transparent',
+      primary: colors.rose,
+      neutral: colors.neutral
+    }
+  },
   plugins: []
 }
 export default config

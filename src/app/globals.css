@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+	.font-mono {
+		font-family: var(--roboto-mono);
+	}
+	
+	.font-sans {
+		font-family: var(--roboto-sans);
+	}
+
+	.sideBarMask {
+		@apply bg-neutral-800
+	}
+
+	.sideBarMask::before {
+		content: '';
+		position: absolute;
+		top: -95%;
+		left: 0;
+		height: 50px;
+		width: 100%;
+		mask: url('../../public/svg/wave-mask.svg') no-repeat;
+		mask-size: 100%;
+
+		@apply bg-neutral-800
+	}
+
+	.sideBarMask::after {
+		content: '';
+		position: absolute;
+		bottom: -95%;
+		left: 0;
+		height: 50px;
+		width: 100%;
+		mask: url('../../public/svg/wave-mask.svg') no-repeat;
+		mask-size: 100%;
+		transform: scaleY(-1);
+
+		@apply bg-neutral-800
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}
