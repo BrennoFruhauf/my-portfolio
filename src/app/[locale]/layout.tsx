@@ -1,9 +1,12 @@
 import '../globals.css'
 
+import { useLocale } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import { Roboto, Roboto_Mono } from 'next/font/google'
+import { notFound } from 'next/navigation'
 
 import { i18n } from '@/config/i18n.config'
+import { ActiveMenuItemProvider } from '@/hooks/useActiveMenuItem'
 import { Locale } from '@/types/i18n'
 
 const roboto = Roboto({
@@ -33,12 +36,15 @@ export default function RootLayout({
   children,
   params
 }: Readonly<IRootLayout>) {
+  const locale = useLocale()
   unstable_setRequestLocale(params.locale)
+
+  if (params.locale !== locale) notFound()
 
   return (
     <html lang={params.locale}>
       <body className={`${roboto.className} ${robotoMono.variable}`}>
-        {children}
+        <ActiveMenuItemProvider>{children}</ActiveMenuItemProvider>
       </body>
     </html>
   )
