@@ -11,6 +11,10 @@
 		font-family: var(--roboto-sans);
 	}
 
+	.section {
+		@apply h-dvh w-full;
+	}
+
 	.sideBarMask {
 		@apply bg-neutral-800
 	}
@@ -18,7 +22,7 @@
 	.sideBarMask::before {
 		content: '';
 		position: absolute;
-		top: -95%;
+		top: -50px;
 		left: 0;
 		height: 50px;
 		width: 100%;
@@ -31,7 +35,7 @@
 	.sideBarMask::after {
 		content: '';
 		position: absolute;
-		bottom: -95%;
+		bottom: -50px;
 		left: 0;
 		height: 50px;
 		width: 100%;
@@ -41,6 +45,21 @@
 
 		@apply bg-neutral-800
 	}
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: theme(colors.primary.500) transparent;
+}
+
+::-moz-selection {
+	color: theme(colors.primary.50);
+	background: theme(colors.primary.500);
+}
+
+::selection {
+	color: theme(colors.primary.50);
+	background: theme(colors.primary.500);
 }
 
 html {
