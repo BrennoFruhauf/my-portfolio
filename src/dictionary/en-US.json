@@ -1,4 +1,26 @@
 {
+  "Menu": {
+    "home": {
+      "title": "Home",
+      "path": "home"
+    },
+    "about": {
+      "title": "About Me",
+      "path": "about-me"
+    },
+    "projects": {
+      "title": "Projects",
+      "path": "projects"
+    },
+    "contact": {
+      "title": "Contact",
+      "path": "contact"
+    },
+    "resume": {
+      "title": "Resume",
+      "path": "resume"
+    }
+  },
   "Home": {
     "metadata": {
       "title": "{name} | Portfolio",

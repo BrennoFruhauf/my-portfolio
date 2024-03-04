@@ -7,3 +7,9 @@ export interface IconProps extends ComponentProps<'svg'> {
 }
 
 export type Icon = keyof typeof icon
+
+export type MenuItem = {
+  title: string
+  path: string
+  icon: Icon
+}

@@ -1,10 +1,10 @@
 import { Metadata } from 'next'
+import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 
-import IconButton from '@/components/IconButton'
-import IconsList from '@/components/IconsList'
+import { IconsList } from '@/components/IconsList'
+import { Menu } from '@/components/Menu'
 import { IMetaData } from '@/types/metadata'
-import { Icon } from '@/types/types'
 
 export async function generateMetadata({
   params
@@ -17,48 +17,18 @@ export async function generateMetadata({
   }
 }
 
-// Temporary Data
-interface TempData {
-  social: {
-    name: Icon
-    link: string
-  }[]
-}
-
-const tempData: TempData = {
-  social: [
-    {
-      name: 'GitHub',
-      link: 'https://github.com/BrennoFruhauf'
-    },
-    {
-      name: 'LinkedIn',
-      link: 'https://www.linkedin.com/in/brennofruhauf/'
-    },
-    {
-      name: 'Email',
-      link: 'mailto:brennofruhauf@outlook.com'
-    },
-    {
-      name: 'WhatsApp',
-      link: 'https://wa.me/5564992600577'
-    }
-  ]
-}
-
-export default function Index() {
+export default function Home() {
+  const tMenu = useTranslations('Menu')
   return (
     <>
-      <IconsList>
-        {tempData.social.map((s) => (
-          <IconButton
-            key={s.name}
-            name={s.name}
-            link={s.link}
-            tooltipDirection="left"
-          />
-        ))}
-      </IconsList>
+      <Menu />
+      <main className="h-[400dvh] flex flex-col gap-4">
+        <section className="section" id={tMenu('home.path')}></section>
+        <section className="section" id={tMenu('about.path')}></section>
+        <section className="section" id={tMenu('projects.path')}></section>
+        <section className="section" id={tMenu('contact.path')}></section>
+      </main>
+      <IconsList />
     </>
   )
 }
