@@ -3,7 +3,7 @@ import '../globals.css'
 import { Roboto, Roboto_Mono } from 'next/font/google'
 
 import { i18n } from '@/config/i18n.config'
-import { ActiveMenuItemProvider } from '@/hooks/useActiveMenuItem'
+import { Providers } from '@/providers/Providers'
 import { Locale } from '@/types/i18n'
 
 const roboto = Roboto({
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang={params.locale}>
       <body className={`${roboto.className} ${robotoMono.variable}`}>
-        <ActiveMenuItemProvider>{children}</ActiveMenuItemProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )
