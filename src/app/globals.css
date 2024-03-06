@@ -53,15 +53,135 @@
 }
 
 ::-moz-selection {
-	color: theme(colors.primary.50);
+	color: theme(colors.neutral.50);
 	background: theme(colors.primary.500);
 }
 
 ::selection {
-	color: theme(colors.primary.50);
+	color: theme(colors.neutral.50);
 	background: theme(colors.primary.500);
 }
 
 html {
 	scroll-behavior: smooth;
+}
+
+.hamburger {
+  cursor: pointer;
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  height: 3em;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: theme(colors.primary.500);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+.toggle {
+  position: relative;
+}
+
+.checkbox {
+  display: none;
+}
+
+.input::selection {
+  background: none;
+}
+
+.checkbox:checked + .input {
+  background: theme(colors.primary.500);
+}
+
+.checkbox:checked + .input:active {
+  box-shadow: none;
+}
+
+.checkbox:checked + .input:active .circle {
+  margin-left: -.8em;
+}
+
+.checkbox:checked + .input .circle {
+  left: 50%;
+}
+
+.input {
+  background: theme(colors.neutral.900);
+	border-radius: 2em;
+	padding: 2px;
+	transition: all .4s ease;
+	border: none;
+  overflow: hidden;
+  outline: 0;
+	display: block;
+  width: 4rem;
+	height: 2rem;
+	position: relative;
+	cursor: pointer;
+	user-select: none;
+}
+
+.circle {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+	width: 50%;
+	height: 100%;
+  border-radius: 2em;
+	background: theme(colors.neutral.50);
+	transition: all .3s
+    cubic-bezier(
+     0.175, 0.885, 0.320, 1.275
+    );
+}
+
+.input:hover {
+  will-change: padding;
+}
+
+.input:active .circle {
+  width: 46px;
+  border-radius: 100px;
+}
+
+.checkbox:checked + .input:active .circle {
+  margin-left: -17px;
+}
+
+.circle svg {
+  width: 1rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: color .2s ease;
+}
+
+.checkbox:checked + .input .circle {
+  color: theme(colors.primary.500);
 }
