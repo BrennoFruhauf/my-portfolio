@@ -1,27 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-
 import { Moon, Sun } from 'lucide-react'
-import { useTheme } from 'next-themes'
 
-enum themes {
-  light = 'light',
-  dark = 'dark'
-}
+import { useThemeConfig } from '@/hooks/useThemeConfig'
 
 export function ThemeSwitch() {
-  const { theme, setTheme } = useTheme()
-  const [isMounted, setIsMounted] = useState(false)
-  const isDarkTheme = theme === themes.dark
-
-  const handleThemeChange = () => {
-    setTheme(theme === themes.dark ? themes.light : themes.dark)
-  }
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
+  const { isDark, isMounted, handleChangeTheme } = useThemeConfig()
 
   if (!isMounted)
     return (
@@ -47,12 +31,12 @@ export function ThemeSwitch() {
         type="checkbox"
         id="ck"
         className="checkbox"
-        onClick={handleThemeChange}
+        onClick={handleChangeTheme}
         readOnly
-        checked={isDarkTheme}
+        checked={isDark}
       />
       <label htmlFor="ck" className="input">
-        <div className="circle">{isDarkTheme ? <Sun /> : <Moon />}</div>
+        <div className="circle">{isDark ? <Sun /> : <Moon />}</div>
       </label>
     </div>
   )
