@@ -15,7 +15,7 @@ export function useTheme() {
   const isDark = theme === themes.dark
 
   const handleChangeTheme = () => {
-    setTheme(t === themes.dark ? themes.light : themes.dark)
+    setTheme(theme === themes.dark ? themes.light : themes.dark)
   }
 
   useEffect(() => {
