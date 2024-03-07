@@ -2,7 +2,7 @@ import { ReactNode, useEffect, useState } from 'react'
 
 import { useLocale } from 'next-intl'
 
-import { ActiveMenuItemContext } from '@/components/contexts/ActiveMenuItemContext'
+import { ActiveMenuItemContext } from '@/contexts/ActiveMenuItemContext'
 
 type Props = {
   children: ReactNode
