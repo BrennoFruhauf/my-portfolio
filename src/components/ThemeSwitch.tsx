@@ -2,10 +2,10 @@
 
 import { Moon, Sun } from 'lucide-react'
 
-import { useThemeConfig } from '@/hooks/useThemeConfig'
+import { useTheme } from '@/hooks/useTheme'
 
 export function ThemeSwitch() {
-  const { isDark, isMounted, handleChangeTheme } = useThemeConfig()
+  const { isDark, isMounted, handleChangeTheme } = useTheme()
 
   if (!isMounted)
     return (

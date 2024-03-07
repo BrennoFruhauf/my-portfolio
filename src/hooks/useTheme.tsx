@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { useTheme } from 'next-themes'
+import { useTheme as useNextTheme } from 'next-themes'
 
 enum themes {
   light = 'light',
@@ -8,8 +8,8 @@ enum themes {
   system = 'system'
 }
 
-export function useThemeConfig() {
-  const { theme: t, systemTheme, setTheme } = useTheme()
+export function useTheme() {
+  const { theme: t, systemTheme, setTheme } = useNextTheme()
   const [isMounted, setIsMounted] = useState(false)
   const theme = t === themes.system ? systemTheme : t
   const isDark = theme === themes.dark
