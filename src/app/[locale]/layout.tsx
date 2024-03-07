@@ -35,7 +35,9 @@ export default function RootLayout({
 }: Readonly<IRootLayout>) {
   return (
     <html suppressHydrationWarning lang={params.locale}>
-      <body className={`${roboto.className} ${robotoMono.variable}`}>
+      <body
+        className={`${roboto.className} ${robotoMono.variable} bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-50`}
+      >
         <Providers>{children}</Providers>
       </body>
     </html>
