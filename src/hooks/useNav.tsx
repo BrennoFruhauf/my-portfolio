@@ -2,46 +2,47 @@ import { useEffect, useState } from 'react'
 
 export function useNav() {
   const breakpointOnMobileNav = 1024
-  const [pageWidth, setPageWidth] = useState(0)
   const [isActiveSideBar, setIsActiveSideBar] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleCloseOnClick = () => {
-    if (pageWidth < breakpointOnMobileNav) setIsOpen(false)
-  }
+  useEffect(() => {
+    let lastPageWidth = window.innerWidth
 
-  const handleToggleView = () => {
-    setIsOpen(!isOpen)
-  }
+    const handleWidthResize = () => {
+      const currentWidth = window.innerWidth
+
+      if (currentWidth !== lastPageWidth && isOpen) {
+        setIsOpen(false)
+        lastPageWidth = currentWidth
+      }
+    }
+
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto'
+
+    window.addEventListener('resize', handleWidthResize)
+    return () => window.removeEventListener('resize', handleWidthResize)
+  }, [isOpen])
 
   useEffect(() => {
-    const setCurrentWidth = () => setPageWidth(window.innerWidth)
-
+    const menuHeight = 124
     const handleSideMenu = () => {
-      const menuHeight = 124
       const scrollPosition = window.scrollY
 
-      if (scrollPosition >= menuHeight) setIsActiveSideBar(true)
-      else setIsActiveSideBar(false)
+      if (scrollPosition > menuHeight && !isActiveSideBar)
+        setIsActiveSideBar(true)
+      else if (scrollPosition < menuHeight && isActiveSideBar)
+        setIsActiveSideBar(false)
     }
 
     handleSideMenu()
-    window.addEventListener('resize', setCurrentWidth)
     window.addEventListener('scroll', handleSideMenu)
-    return () => {
-      window.removeEventListener('resize', setCurrentWidth)
-      window.removeEventListener('scroll', handleSideMenu)
-    }
-  }, [])
+    return () => window.removeEventListener('scroll', handleSideMenu)
+  }, [isActiveSideBar])
 
-  useEffect(() => {
-    if (isOpen && pageWidth >= breakpointOnMobileNav) setIsOpen(false)
-  }, [isOpen, pageWidth, breakpointOnMobileNav])
-
-  useEffect(() => {
-    if (isOpen) document.body.style.overflow = 'hidden'
-    else document.body.style.overflow = 'auto'
-  }, [isOpen])
+  const handleToggleView = () => setIsOpen(!isOpen)
+  const handleCloseOnClick = () => {
+    if (window.innerWidth < breakpointOnMobileNav) setIsOpen(false)
+  }
 
   return { isOpen, isActiveSideBar, handleCloseOnClick, handleToggleView }
 }
