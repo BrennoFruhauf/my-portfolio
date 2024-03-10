@@ -15,23 +15,29 @@ export function ActiveMenuItemProvider({ children }: Props) {
   const [activeMenuItem, setActiveMenuItem] = useState(initialState)
 
   useEffect(() => {
+    const lastActiveMenuItem = activeMenuItem
+    const sections = document.querySelectorAll('section')
+
     const handleScroll = () => {
-      const sections = document.querySelectorAll('section')
       const scrollPosition = window.scrollY
+      let currentActiveMenuItem = ''
 
       sections.forEach((section) => {
         const top = section.offsetTop
         const height = section.offsetHeight
 
         if (scrollPosition >= top && scrollPosition < top + height)
-          setActiveMenuItem(section.id)
-      })
+          currentActiveMenuItem = section.id
+      }, currentActiveMenuItem)
+
+      if (currentActiveMenuItem !== lastActiveMenuItem)
+        setActiveMenuItem(currentActiveMenuItem)
     }
 
     handleScroll()
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [activeMenuItem])
 
   return (
     <ActiveMenuItemContext.Provider value={activeMenuItem}>
