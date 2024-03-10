@@ -44,7 +44,7 @@ export function NavBar({ menuItems, resume }: Readonly<Props>) {
       </div>
 
       <div
-        className={`flex items-center gap-5 mb-auto ${isOpen ? 'flex' : 'hidden'} lg:flex`}
+        className={`flex flex-col min-[380px]:flex-row items-center gap-5 mb-auto ${isOpen ? 'flex' : 'hidden'} lg:flex`}
       >
         <Button text={resume} target="_blank" link="/resume" />
         <LanguageButton />

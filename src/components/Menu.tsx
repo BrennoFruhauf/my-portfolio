@@ -4,6 +4,7 @@ import { Link } from '@/navigation'
 import { MenuItem } from '@/types/types'
 
 import { NavBar } from './NavBar'
+import { NavScroll } from './NavScroll'
 import { SideNavBar } from './SideNavBar'
 
 export function Menu() {
@@ -33,17 +34,19 @@ export function Menu() {
 
   return (
     <>
-      <div className="py-10 flex px-12 gap-5 justify-between items-center select-none absolute w-full">
-        <h1 className="text-5xl font-bold font-mono transition-all duration-300 active:scale-90">
-          <Link className="relative leading-none" href="/">
-            B
-            <span className="text-primary-500 absolute leading-none left-full bottom-2 -indent-4">
-              .
-            </span>
-          </Link>
-        </h1>
-        <NavBar menuItems={menuItems} resume={tMenu('resume.title')} />
-      </div>
+      <NavScroll>
+        <div className="max-w-7xl flex justify-between items-center w-full m-auto">
+          <h1 className="text-5xl font-bold font-mono transition-all duration-300 active:scale-90">
+            <Link className="relative leading-none" href="/">
+              B
+              <span className="text-primary-500 absolute leading-none left-full bottom-2 -indent-4">
+                .
+              </span>
+            </Link>
+          </h1>
+          <NavBar menuItems={menuItems} resume={tMenu('resume.title')} />
+        </div>
+      </NavScroll>
       <SideNavBar menuItems={menuItems} />
     </>
   )
