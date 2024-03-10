@@ -6,6 +6,8 @@ import { IconsList } from '@/components/IconsList'
 import { Menu } from '@/components/Menu'
 import { IMetaData } from '@/types/metadata'
 
+import { Hero } from './_components/Hero'
+
 export async function generateMetadata({
   params
 }: IMetaData): Promise<Metadata> {
@@ -19,11 +21,12 @@ export async function generateMetadata({
 
 export default function Home() {
   const tMenu = useTranslations('Menu')
+
   return (
     <>
       <Menu />
-      <main className="h-[400dvh] flex flex-col gap-4">
-        <section className="section" id={tMenu('home.path')}></section>
+      <main className="mx-auto px-6 md:px-12 lg:px-24 xl:px-36 max-w-[1600px]">
+        <Hero id={tMenu('home.path')} />
         <section className="section" id={tMenu('about.path')}></section>
         <section className="section" id={tMenu('projects.path')}></section>
         <section className="section" id={tMenu('contact.path')}></section>

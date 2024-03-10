@@ -33,9 +33,14 @@ export function Menu() {
 
   return (
     <>
-      <div className="py-10 flex px-5 gap-5 justify-between items-center select-none">
-        <h1 className="text-3xl font-bold font-mono">
-          <Link href="/">B</Link>
+      <div className="py-10 flex px-12 gap-5 justify-between items-center select-none absolute w-full">
+        <h1 className="text-5xl font-bold font-mono transition-all duration-300 active:scale-90">
+          <Link className="relative leading-none" href="/">
+            B
+            <span className="text-primary-500 absolute leading-none left-full bottom-2 -indent-4">
+              .
+            </span>
+          </Link>
         </h1>
         <NavBar menuItems={menuItems} resume={tMenu('resume.title')} />
       </div>

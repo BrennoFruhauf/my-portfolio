@@ -12,7 +12,7 @@
 	}
 
 	.section {
-		@apply h-dvh w-full;
+		@apply min-h-dvh mx-auto max-w-5xl py-28;
 	}
 
 	.sideBarMask {

@@ -27,7 +27,13 @@
       "description": "Explore meu portfólio para ver meu trabalho em design, desenvolvimento web e muito mais. Destaco minha experiência e habilidades para criar soluções incríveis."
     },
     "data": {
-
+      "hero": {
+        "title": "Olá, meu nome é",
+        "subtitle": "Eu sou um",
+        "stack": "Desenvolvedor Full Stack",
+        "description": "Exploro os limites da tecnologia para resolver problemas do mundo real. Da criação de aplicações à automação de processos, minha abordagem é movida pela paixão de solucionar problemas e desejo de fazer a diferença.",
+        "cta": "Explore meus projetos"
+      }
     }
   }
 }

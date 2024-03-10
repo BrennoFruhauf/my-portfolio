@@ -27,7 +27,13 @@
       "description": "Explore my portfolio to see my work in design, web development, and more. I highlight my experience and skills to create incredible solutions."
     },
     "data": {
-
+      "hero": {
+        "title": "Hey, my name is",
+        "subtitle": "I'm a",
+        "stack": "Full Stack Developer",
+        "description": "Exploring the boundaries of technology to solve real-world problems. From creating applications to process automation, my approach is driven by the passion for problem-solving and the desire to make a difference.",
+        "cta": "Explore my work"
+      }
     }
   }
 }
