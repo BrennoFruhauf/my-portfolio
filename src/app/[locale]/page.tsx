@@ -6,6 +6,7 @@ import { IconsList } from '@/components/IconsList'
 import { Menu } from '@/components/Menu'
 import { IMetaData } from '@/types/metadata'
 
+import { About } from './_components/About'
 import { Hero } from './_components/Hero'
 
 export async function generateMetadata({
@@ -25,9 +26,9 @@ export default function Home() {
   return (
     <>
       <Menu />
-      <main className="mx-auto px-6 md:px-12 lg:px-24 xl:px-36 max-w-[1600px]">
+      <main className="mx-auto px-6 sm:px-12 md:px-24 xl:px-36 max-w-[1600px]">
         <Hero id={tMenu('home.path')} />
-        <section className="section" id={tMenu('about.path')}></section>
+        <About id={tMenu('about.path')}></About>
         <section className="section" id={tMenu('projects.path')}></section>
         <section className="section" id={tMenu('contact.path')}></section>
       </main>

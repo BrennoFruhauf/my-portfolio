@@ -33,6 +33,15 @@
         "stack": "Desenvolvedor Full Stack",
         "description": "Exploro os limites da tecnologia para resolver problemas do mundo real. Da criação de aplicações à automação de processos, minha abordagem é movida pela paixão de solucionar problemas e desejo de fazer a diferença.",
         "cta": "Explore meus projetos"
+      },
+      "about": {
+        "title": "Sobre Mim",
+        "first-paragraph": "Olá, meu nome é Brenno, como mencionado anteriormente, e tenho 24 anos. Resido no interior de Goiás e estou atualmente cursando o 5º semestre em Sistemas de Informação no Instituto Federal de Goiás.",
+        "second-paragraph": "Desde os meus 11 anos, quando tive meu primeiro computador, sou apaixonado por Tecnologia da Informação. Essa paixão é tão intensa que, ao me deparar com um problema, imediatamente penso em como resolvê-lo usando alguma solução tecnológica.",
+        "third-paragraph": "Comecei a estudar programação no final de 2021, assistindo a vídeos online. Em 2022, ingressei na faculdade em busca de um conhecimento mais aprofundado em programação e também para estabelecer contatos com pessoas que compartilham da mesma paixão pela tecnologia.",
+        "fourth-paragraph": "Desde então, venho realizando trabalhos freelance e projetos pessoais nas áreas de design, desenvolvimento web e automação de processos.",
+        "main-tech": "Principais Tecnologias:",
+        "secondary-tech": "Tecnologias Secundárias:"
       }
     }
   }

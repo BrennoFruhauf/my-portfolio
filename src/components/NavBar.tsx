@@ -8,6 +8,7 @@ import { MenuItem } from '@/types/types'
 
 import { Button } from './Button'
 import { Hamburguer } from './Hamburguer'
+import { IconButton } from './IconButton'
 import { LanguageButton } from './LanguageButton'
 import { ThemeSwitch } from './ThemeSwitch'
 
@@ -50,6 +51,35 @@ export function NavBar({ menuItems, resume }: Readonly<Props>) {
         <LanguageButton />
         <ThemeSwitch />
       </div>
+
+      {isOpen && (
+        <div className="flex gap-4 items-center">
+          <IconButton
+            name="GitHub"
+            href="https://github.com/BrennoFruhauf"
+            target="_blank"
+            tooltipDirection="left"
+          />
+          <IconButton
+            name="LinkedIn"
+            href="https://www.linkedin.com/in/brennofruhauf/"
+            target="_blank"
+            tooltipDirection="left"
+          />
+          <IconButton
+            name="Email"
+            href="mailto:brennofruhauf@outlook.com"
+            target="_blank"
+            tooltipDirection="left"
+          />
+          <IconButton
+            name="WhatsApp"
+            href="https://wa.me/5564992600577"
+            target="_blank"
+            tooltipDirection="left"
+          />
+        </div>
+      )}
     </nav>
   )
 }

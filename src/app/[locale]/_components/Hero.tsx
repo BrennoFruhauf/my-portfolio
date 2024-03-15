@@ -25,7 +25,9 @@ export function Hero(props: Props) {
         <span>{t('subtitle')} </span>
         <span className="text-primary-500 font-bold">{t('stack')}</span>
       </h2>
-      <p className="text-neutral-500 max-w-xl text-xl">{t('description')}</p>
+      <p className="text-neutral-500 dark:text-neutral-400 max-w-xl text-xl">
+        {t('description')}
+      </p>
       <div className="mt-10">
         <Button
           text={t('cta')}

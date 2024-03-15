@@ -16,7 +16,7 @@ export function SideNavBar({ menuItems }: Props) {
 
   return (
     <nav
-      className={`sideBarMask fixed left-0 top-1/2 lg:flex hidden flex-col gap-5 px-2 py-3 text-neutral-50 transition-transform ${isActiveSideBar ? '-translate-y-1/2 translate-x-0' : '-translate-y-1/2 -translate-x-14'}`}
+      className={`sideBarMask fixed left-0 top-1/2 md:flex hidden flex-col gap-5 px-2 py-3 text-neutral-50 transition-transform ${isActiveSideBar ? '-translate-y-1/2 translate-x-0' : '-translate-y-1/2 -translate-x-14'}`}
     >
       {menuItems.map((item, index) => (
         <IconButton
