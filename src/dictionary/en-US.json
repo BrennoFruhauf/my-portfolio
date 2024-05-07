@@ -36,12 +36,16 @@
       },
       "about": {
         "title": "About Me",
-        "first-paragraph": "Hello, my name is Brenno, as mentioned earlier, and I am 24 years old. I reside in the interior of Goiás and am currently studying the 5th semester in Information Systems at the Federal Institute of Goiás.",
+        "first-paragraph": "Hello, my name is Brenno, as mentioned earlier, and I am 24 years old. I reside in the interior of Goiás and am currently studying Information Systems at the Federal Institute of Goiás.",
         "second-paragraph": "Since I was 11 years old, when I had my first computer, I have been passionate about Information Technology. This passion is so intense that when faced with a problem, I immediately think of how to solve it using some technological solution.",
         "third-paragraph": "I started studying programming at the end of 2021, watching online videos. In 2022, I enrolled in college to gain a deeper knowledge of programming and also to connect with people who share the same passion for technology.",
         "fourth-paragraph": "Since then, I have been doing freelance work and personal projects in the areas of design, web development, and process automation.",
         "main-tech": "Main Technologies:",
         "secondary-tech": "Secondary Technologies:"
+      },
+      "projects": {
+        "title": "Projects",
+        "description": "Check out some of my most recent projects."
       }
     }
   }
