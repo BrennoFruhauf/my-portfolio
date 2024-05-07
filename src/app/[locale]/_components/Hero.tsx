@@ -14,7 +14,7 @@ export function Hero(props: Props) {
   return (
     <section className="section flex flex-col justify-center" id={id}>
       <h1 className="flex flex-col">
-        <span className="font-mono text-primary-500 font-normal text-smallheading">
+        <span className="font-mono text-primary-500 font-normal text-paragraph">
           {t('title')}
         </span>
         <span className="text-heading font-extrabold leading-tight -indent-1">

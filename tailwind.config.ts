@@ -18,7 +18,9 @@ const config: Config = {
       fontSize: {
         heading: 'clamp(40px, 8vw, 80px)',
         subheading: 'clamp(26px, 5vw, 32px)',
-        smallheading: 'clamp(14px, 5vw, 16px)'
+        'project-title': 'clamp(24px, 5vw, 28px)',
+        base: 'clamp(16px, 3vw, 20px)',
+        paragraph: 'clamp(14px, 5vw, 16px)'
       },
       animation: {
         scrolldown: 'scrolldown 2.5s infinite',
